@@ -47,6 +47,8 @@ if has_build_ui:
 
             # build UI & resources
             build_ui.run(self)
+            # create __init__ file for compiled ui
+            open("app/ui/__init__.py", "a").close()
 
     cmdclass["build_res"] = build_res
 
@@ -91,7 +93,7 @@ setup(
     name="app",
     version=_version,
     packages=find_packages(),
-    description="PyQt5 Boilerplate",
+    description="PySide2 Boilerplate",
     author="Gerard Marull-Paretas",
     author_email="gerardmarull@gmail.com",
     license="MIT",

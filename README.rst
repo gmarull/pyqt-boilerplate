@@ -22,11 +22,19 @@ Features
 Getting started
 ---------------
 
-First of all create a new virtual environment and activate it::
+First of all create a new virtual environment::
 
     python3 -m venv .venv
+
+Then activate it::
+
+Linux::
+
     source .venv/bin/activate
 
+Windows::
+
+    .\.venv\Scripts\activate.ps1
 
 Then install the application in development mode::
 
@@ -87,3 +95,12 @@ maximum line length, etc. You can run it like this::
 
 .. _PyInstaller: http://www.pyinstaller.org/
 .. _Sphinx: http://www.sphinx-doc.org/
+
+Troubleshooting
+---------------
+
+If PowerShell throws an UnauthorizedAccess error, verify that the execution policy is not Restricted::
+
+    Get-ExecutionPolicy
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
